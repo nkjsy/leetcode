@@ -4,6 +4,8 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
+        neg = x < 0
+        x = abs(x)
         l = []
         while x != 0:
             l.append(x % 10)
@@ -14,4 +16,7 @@ class Solution(object):
         for i in l:
             rev += d * i
             d *= 10
-        return rev
+        if neg:
+            return 0 - rev
+        else:
+            return rev
